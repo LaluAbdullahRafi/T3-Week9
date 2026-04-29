@@ -58,7 +58,7 @@
 
     <?php
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        // Validasi input wajib
+    
         $nama = $_POST['nama'] ?? '';
         $nim = $_POST['nim'] ?? '';
         $email = $_POST['email'] ?? '';
@@ -71,7 +71,7 @@
         if (empty($nama) || empty($nim) || empty($email) || empty($telepon) || empty($alamat) || empty($jk) || empty($jurusan)) {
             echo "<p class='error'>Peringatan: Semua field wajib diisi!</p>";
         } else {
-            // Tampilkan Tabel
+            
             echo "<table>";
             echo "<tr><th>Nama</th><td>$nama</td></tr>";
             echo "<tr><th>NIM</th><td>$nim</td></tr>";
@@ -84,7 +84,7 @@
             echo "</table>";
         }
 
-        // Fitur Bonus: Tombol Kembali dengan data tetap terisi
+        
         $hobi_str = implode(",", $hobi);
         $query_string = http_build_query([
             'nama' => $nama, 'nim' => $nim, 'email' => $email, 
