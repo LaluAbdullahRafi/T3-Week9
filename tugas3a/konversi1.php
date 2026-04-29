@@ -1,5 +1,4 @@
 <?php
-// Function untuk setiap konversi sesuai rumus
 function celsiusToFahrenheit($suhu) {
     return ($suhu * 9/5) + 32;
 }
@@ -15,12 +14,10 @@ function celsiusToKelvin($suhu) {
 $hasil = "";
 $error = "";
 
-// Proses konversi (Self-processing form)
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $inputSuhu = $_POST['suhu'];
     $jenisKonversi = $_POST['konversi'];
 
-    // Validasi: input harus angka
     if (!is_numeric($inputSuhu)) {
         $error = "Input harus berupa angka!";
     } else {
